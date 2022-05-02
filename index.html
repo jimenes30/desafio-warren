@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Desafio 1</title>
+        <link rel="stylesheet" href="./styles/style.css" type="text/css">
+        <link rel="icon" href="">
+    </head>
+    <body>
+
+        <div class="main">
+            <div class="container-cabecalho">
+                <h1>Desafio 01</h1>
+                <p>
+                    Alguns números inteiros positivos n possuem uma propriedade na qual a soma de n + reverso(n) resultam em números ímpares. Por exemplo, 36 + 63 = 99 e 409 + 904 = 1313. Considere que n ou reverso(n) não podem começar com 0.
+                </p>
+                <p>Existem 120 números reversíveis abaixo de 1000.</p>
+                <p>
+                    Construa um algoritmo que mostre na tela todos os números n onde a soma de n + reverso(n) resultem em números ímpares que estão abaixo de 1 milhão.
+                </p>
+            </div>
+
+            <button class="botao-resultado" type="button" onclick="showResult()">Resultado</button>
+
+            <button class="botao-resultado" type="button" onclick="clearResult()">Limpar</button>
+
+            <div class="container-resultado">
+                <p id="resultado"></p>
+            </div>
+        </div>
+
+        <script src="./scripts/script.js"></script>
+    </body>
+</html>
