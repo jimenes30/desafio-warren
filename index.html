@@ -5,10 +5,16 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Desafio 1</title>
-        <link rel="stylesheet" href="./styles/style.css" type="text/css">
-        <link rel="icon" href="">
+        <link rel="stylesheet" href="./styles/style1.css" type="text/css">
+        <link rel="icon" href="https://img.icons8.com/material/24/000000/code--v1.png">
     </head>
     <body>
+
+        <nav class="nav">
+            <a href="./index.html"><button type="button">Desafio 1</button></a>
+            <a href="./desafio2.html"><button type="button">Desafio 2</button></a>
+            <a href="./desafio3.html"><button type="button">Desafio 3</button></a>
+        </nav>
 
         <div class="main">
             <div class="container-cabecalho">
@@ -22,15 +28,20 @@
                 </p>
             </div>
 
-            <button class="botao-resultado" type="button" onclick="showResult()">Resultado</button>
+            <div class="container-botao">
 
-            <button class="botao-resultado" type="button" onclick="clearResult()">Limpar</button>
+                <!-- <button class="botao-resultado" type="button" onclick="showResult()">Mostrar Resultado</button> -->
+                <button class="botao-resultado" type="button" onclick="loading()">Mostrar Resultado</button>
+                <button class="botao-limpar" type="button" onclick="clearResult()">Limpar</button>
+                <div id="loader"></div>
+
+            </div>
 
             <div class="container-resultado">
                 <p id="resultado"></p>
             </div>
         </div>
 
-        <script src="./scripts/script.js"></script>
+        <script src="./scripts/script-d1.js"></script>
     </body>
 </html>

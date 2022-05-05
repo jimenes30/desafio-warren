@@ -1,0 +1,64 @@
+.nav {
+    position: absolute;
+    left: 330px;
+    top: 10px;
+    margin-bottom: 10px;
+}
+
+.botao-navegacao {
+    margin-bottom: 5px;
+}
+
+.main {
+    max-width: 300px;
+}
+
+.container-cabecalho {
+    max-width: 500px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    text-align: justify;
+}
+
+.input-N {
+    position: relative;
+    display: inline-block;
+    width: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.input-vetores {
+    width: 15px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.botoes-resultado-container{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.botao-resultado {
+    display: inline-block;
+    position: relative;
+}
+.botao-limpar{
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.container-resultado {
+    min-height: 88px;
+    border: 1px solid black;
+}
+
+#resultado {
+    text-align: center;
+}
+
+.table, th, td {
+    border: 1px solid black;
+}

@@ -1,0 +1,62 @@
+.nav {
+    position: absolute;
+    left: 330px;
+    top: 10px;
+    margin-bottom: 10px;
+}
+
+.botao-navegacao {
+    margin-bottom: 5px;
+}
+
+.main {
+    max-width: 300px;
+}
+
+.container-cabecalho {
+    max-width: 500px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    text-align: justify;
+}
+
+.container-botao {
+    height: 50px;
+    text-align: center;
+}
+
+.botao-resultado {
+    position: relative;
+}
+
+.botao-limpar{
+    position: relative;
+}
+
+#loader {
+    position: relative;
+    display: inline-block;
+    visibility: hidden;
+    border: 5px solid #cecece;
+    border-radius: 50%;
+    left: 5px;
+    top: 8px;
+    border-top: 5px solid #343434;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.container-resultado {
+    min-height: 100px;
+    border: 1px solid black;
+}
+
+#resultado {
+    text-align: center;
+}

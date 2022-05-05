@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Desafio 3</title>
+        <link rel="stylesheet" href="./styles/style3.css" type="text/css">
+        <link rel="icon" href="https://img.icons8.com/material/24/000000/code--v1.png">
+    </head>
+    <body>
+
+        <nav class="nav">
+            <a href="./index.html"><button class="botao-navegacao" type="button">Desafio 1</button></a>
+            <a href="./desafio2.html"><button class="botao-navegacao" type="button">Desafio 2</button></a>
+            <a href="./desafio3.html"><button class="botao-navegacao" type="button">Desafio 3</button></a>
+        </nav>
+
+        <div id="main" class="main">
+            <div class="container-cabecalho">
+                <h1>Desafio 03</h1>
+                <p>Dado um vetor de números e um número n. Determine a soma com o menor número de elementos entre os números do vetor mais próxima de n e também mostre os elementos que compõem a soma. Para criar a soma, utilize qualquer elemento do vetor uma ou mais vezes. Exemplo:</p>
+                    
+                    <b>Entrada de dados:</b><br>
+                    
+                    N = 10
+                    V = [2, 3, 4]<br>
+                    
+                    <br><b>Saída de dados:</b>
+                    
+                    <br>10<br>
+                    [2, 4, 4]<br>
+                    [3, 3, 4]<br>
+                    
+                    <p><b>Explicação:</b><br>
+                        Se N = 10 e V = [2, 3, 4] você pode utilizar as seguintes soma: [2, 2, 2, 2, 2], [2, 2, 3, 3], [2, 4, 4] ou [3, 3, 4]. Como a quantidade de elementos em [2, 4, 4] e [3, 3, 4] é igual, os dois conjuntos devem ser mostrados.</p>
+            </div>
+
+            
+            Entradas:<br>
+            
+            N = <input id="input-N" class="input-N" oninput="alterar_entrada()" type="text" value="10"><br>
+
+            V = [<input id="vetor0" class="input-vetores" oninput="alterar_entrada()" type="text" value="2"> ,
+            <input id="vetor1" class="input-vetores" oninput="alterar_entrada()" type="text" value="3"> , 
+            <input id="vetor2" class="input-vetores" oninput="alterar_entrada()" type="text" value="4">]
+
+            <div class="botoes-resultado-container">
+                <button class="botao-resultado" type="button" onclick="mostrar_resultado()" >Mostrar Resultado</button>
+
+                <button class="botao-limpar" type="button" onclick="limpar_resultado()">Limpar</button>
+            </div>
+            <div id="resultado" class="container-resultado">
+                <p id="itens"></p>
+            </div>
+        </div>
+
+        <script src="./scripts/script-d3.js"></script>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Desafio 2</title>
+        <link rel="stylesheet" href="./styles/style2.css" type="text/css">
+        <link rel="icon" href="https://img.icons8.com/material/24/000000/code--v1.png">
+    </head>
+    <body>
+
+        <nav class="nav">
+            <a href="./index.html"><button class="botao-navegacao" type="button">Desafio 1</button></a>
+            <a href="./desafio2.html"><button class="botao-navegacao" type="button">Desafio 2</button></a>
+            <a href="./desafio3.html"><button class="botao-navegacao" type="button">Desafio 3</button></a>
+        </nav>
+
+        <div class="main">
+            <div class="container-cabecalho">
+                <h1>Desafio 02</h1>
+                <p>Um professor de programação, frustrado com a falta de disciplina de seus alunos, decidi cancelar a aula se menos de x alunos estiverem presentes quando a aula for iniciada. 
+                   O tempo de chegada varia entre:
+                    <ul>
+                        <li>Normal: tempoChegada <= 0</li>
+                        <li>Atraso: tempoChegada > 0</li>
+                    </ul>
+                    <p>Construa um algoritmo que dado o tempo de chegada de cada aluno e o limite x de alunos presentes, determina se a classe vai ser cancelada ou não ("Aula cancelada” ou “Aula normal”). Exemplo:</p>
+                    <b>Entrada de dados:</b>
+                <br>x = 3 
+                tempoChegada = [-2, -1, 0, 1, 2]<br>
+                <br><b>Saída de dados:</b> <br>Aula normal.<br>
+            <p><b>Explicação:</b><br>Os três primeiros alunos chegaram no horário. Os dois últimos estavam atrasados. O limite é de três alunos, portanto a aula não será cancelada.</p>
+                </p>
+            </div>
+
+            
+            Entradas:<br>
+            
+            x = <input id="limite_alunos_presentes" class="input-x" oninput="alterar_entrada()" type="text" placeholder="x = 3" value="3"><br>
+
+            tempoChegada = [<input id="aluno1" class="input-alunos" oninput="alterar_entrada()" type="text" placeholder="-2" value="-2"> ,
+            <input id="aluno2" class="input-alunos" oninput="alterar_entrada()" type="text" placeholder="-1" value="-1"> , 
+            <input id="aluno3" class="input-alunos" oninput="alterar_entrada()" type="text" placeholder="0" value="0"> , 
+            <input id="aluno4" class="input-alunos" oninput="alterar_entrada()" type="text" placeholder="1" value="1"> , 
+            <input id="aluno5" class="input-alunos" oninput="alterar_entrada()" type="text" placeholder="2" value="2">]
+
+            <button class="botao-resultado" type="button" onclick="mostrar_resultado()" >Mostrar Resultado</button>
+
+            <button class="botao-limpar" type="button" onclick="limpar_resultado()">Limpar</button>
+
+            <div class="container-resultado">
+                <p id="resultado"></p>
+            </div>
+        </div>
+
+        <script src="./scripts/script-d2.js"></script>
+    </body>
+</html>
