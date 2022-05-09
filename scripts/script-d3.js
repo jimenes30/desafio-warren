@@ -1,76 +1,77 @@
-function sum_array_elements(array) {
+let n = 10;
+const valores = [2, 3, 4];
+let menor = Math.min.apply(Math, valores);
+let vezes = parseInt(n / menor);
+let itens = document.getElementById("itens");
+var resultado = [];
+
+function atualizar_entrada() {
+    for (let i = 0; i < 3; i++){
+        valores[i] = parseInt(document.getElementById(`vetor${i}`).value)
+    }
+    n = parseInt(document.getElementById("input-N").value)
+    menor = Math.min.apply(Math, valores);
+    vezes = parseInt(n / menor);
+}
+
+function soma_elementos_array(array) {
     const sum = array.reduce((partialSum, a) => partialSum + a, 0);
     return sum
 }
 
-function combinations_with_replacement(arr, l) {
-    if(l === void 0) l = arr.length; // Length of the combinations
-    var data = Array(l),             // Used to store state
-        results = [];                // Array of results
-    (function f(pos, start) {        // Recursive function
-      if(pos === l) {                // End reached
-        results.push(data.slice());  // Add a copy of data to results
+function combinacao_com_repeticao(arr, l) {
+    if(l === void 0) l = arr.length; // Tamanho das combinações
+    var data = Array(l),             // Armazena o estado
+        results = [];                // Array de resultados
+    (function f(pos, start) {        // Função rescursiva
+      if(pos === l) {                // Fim alcançado
+        results.push(data.slice());  // Adicionar uma cópia dos dados aos resultados
         return;
       }
       for(var i=start; i<arr.length; ++i) {
-        data[pos] = arr[i];          // Update data
-        f(pos+1, i);                 // Call f recursively
+        data[pos] = arr[i];          // Atualizar dados
+        f(pos+1, i);                 // Chame f recursivamente
       }
-    })(0, 0);                        // Start at index 0
-    return results;                  // Return results
-} 
-
-let n = 10;
-let valores = [2, 3, 4];
-// menor = Math.min.apply(null, valores)
-let menor = Math.min.apply(Math, valores);
-let vezes = parseInt(n / menor);
-let total = parseInt(valores.length);
-var resultado = [];
-
-while (vezes > 0) {
-    comb = combinations_with_replacement(valores, vezes)
-    comb.forEach(element => {
-    if (sum_array_elements(element) == 10) {
-        resultado.push(element)
-        }
-    });
-    vezes -= 1
+    })(0, 0);                        // Comece no índice 0
+    return results;
 }
 
-const tamanhos = []
+function combinacoes_possiveis(){
+    while (vezes > 0) {
+        comb = combinacao_com_repeticao(valores, vezes)
+        comb.forEach(element => {
+        if (soma_elementos_array(element) == n) {
+            resultado.push(element)
+            }
+        });
+        vezes -= 1
+    }
+    return resultado
+}
 
-resultado.forEach(element => {
-    tamanhos.push(element.length)
-});
-
-menorTamanho = Math.min.apply(Math, tamanhos)
-
+function menor_array(resultado){
+    const tamanhos = [];
+    resultado.forEach(element => {
+        tamanhos.push(element.length)
+    });
+    menorTamanho = Math.min.apply(Math, tamanhos);
+}
 
 function mostrar_resultado() {
-    document.getElementById("itens").innerHTML = ""
-    document.getElementById("itens").style.opacity = "1"
-    document.getElementById("itens").innerHTML += n + "<br>"
+    atualizar_entrada();
+    menor_array(combinacoes_possiveis());
+    itens.innerHTML = "";
+    itens.style.opacity = "1";
+    itens.innerHTML += n + "<br>";
     resultado.forEach(element => {
         if (element.length == menorTamanho) {
-            document.getElementById("itens").innerHTML += `[${element}] <br>`
-        }    
+            itens.innerHTML += `[${element}] <br>`}
     });
+    resultado = [];
 }
 
 function limpar_resultado() {
-    document.getElementById("itens").style.opacity = "0"
-    document.getElementById("itens").innerHTML = ""
+    itens.style.opacity = "0"
+    itens.innerHTML = ""
+    console.clear()
 }
-
-// function adcElemento (tag, conteudo, position="beforeend", tagAtual="itens") {
-//     // cria um novo elemento div
-//     // e dá à ele conteúdo
-//     var tagNova = document.createElement(tag);
-//     var conteudoNovo = document.createTextNode(conteudo);
-//     tagNova.appendChild(conteudoNovo); //adiciona o nó de texto à nova div criada
-  
-//     // adiciona o novo elemento criado e seu conteúdo ao DOM
-//     var tagAtual = document.getElementById(tagAtual);
-//     tagAtual.insertAdjacentElement(position, tagNova)
-//   } 
