@@ -26,20 +26,20 @@ function soma_elementos_array(array) {
 }
 
 function combinacao_com_repeticao(arr, l) {
-    if(l === void 0) l = arr.length; // Length of the combinations
-    var data = Array(l),             // Used to store state
-        results = [];                // Array of results
-    (function f(pos, start) {        // Recursive function
-      if(pos === l) {                // End reached
-        results.push(data.slice());  // Add a copy of data to results
+    if(l === void 0) l = arr.length; // Tamanho das combinações
+    var data = Array(l),             // Usado para armazenar o estado
+        results = [];                // Array de resultados
+    (function f(pos, start) {        // Função recursiva
+      if(pos === l) {                // Fim alcançado
+        results.push(data.slice());  // Add cópia dos dados aos resultados
         return;
       }
       for(var i=start; i<arr.length; ++i) {
-        data[pos] = arr[i];          // Update data
-        f(pos+1, i);                 // Call f recursively
+        data[pos] = arr[i];          // Atualizar dados
+        f(pos+1, i);                 // Chame f recursivamente
       }
-    })(0, 0);                        // Start at index 0
-    return results;                  // Return results
+    })(0, 0);                        // Comece no índice 0
+    return results;
 }
 
 function combinacoes_possiveis(){
